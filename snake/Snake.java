@@ -1,17 +1,22 @@
-public class Main {
+import javax.swing.JFrame;
 
-    public Main () {
+public class Snake {
+
+    public Snake () {
     JFrame frame = new JFrame();
+    GamePanel gamepanel = new GamePanel();
 
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setTitle("Snake");
-    frame.setLocationRelativeTo(null);
+        frame.add(gamepanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Snake");
 
-    frame.pack();
-    frame.setVisible(true);
+
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
-    public staic void main(String[] args) {
+    public static void snake(String[] args) {
 
-        new Main();
+        new Snake();
     }
 }
