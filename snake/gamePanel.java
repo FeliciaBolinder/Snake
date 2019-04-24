@@ -5,6 +5,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Date;
+
 
 import javax.swing.JPanel;
 
@@ -49,6 +51,26 @@ public class gamePanel extends JPanel implements Runnable, KeyListener{
 
 
     public void start() {
+
+        try {
+
+            // delay 3 seconds before start
+            System.out.println("Get ready: The game starts in.." );
+            for (int i=3; i >= 0; i--){
+
+                Thread.sleep(1000);
+                System.out.println(i + "...");
+            }
+            System.out.println("GO!" );
+
+
+
+
+
+        } catch (InterruptedException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+
         running = true;
         thread = new Thread(this);
         thread.start();
@@ -69,7 +91,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener{
             snake.add(b);
         }
         ticks++;
-        if(ticks > 150000) {
+        if(ticks > 300000) {
             if(right) xCoor++;
             if(left) xCoor--;
             if(up) yCoor--;
@@ -111,7 +133,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener{
 
         //collision on border
         if(xCoor < 0 || xCoor > 49 || yCoor < 0 || yCoor > 49) {
-            System.out.println("Game Over");
+            System.out.println("Game Over :(");
             stop();
         }
 
@@ -119,7 +141,7 @@ public class gamePanel extends JPanel implements Runnable, KeyListener{
     public void paint(Graphics g) {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         for(int i = 0; i < WIDTH/10 ; i++) {
             g.drawLine(i * 10, 0, i *10, HEIGHT);
