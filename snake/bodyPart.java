@@ -14,6 +14,7 @@ public class bodyPart {
 
     public void tick() {
 
+        //Draws the snake
     }
     public void draw(Graphics g) {
         g.setColor(Color.CYAN);

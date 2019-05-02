@@ -14,6 +14,8 @@ public class Apple {
 
     public void tick() {
 
+
+    //Draws the apple
     }
     public void draw(Graphics g) {
         g.setColor(Color.RED);

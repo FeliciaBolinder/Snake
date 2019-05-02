@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class gamePanel extends JPanel implements Runnable, KeyListener{
 
-
+    //Setup for window
     private static final long serialVersionUID = 1L;
 
     public static final int WIDTH = 500, HEIGHT = 500;
